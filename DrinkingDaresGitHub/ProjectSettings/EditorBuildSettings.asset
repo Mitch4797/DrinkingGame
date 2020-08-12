@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1045 &1
+EditorBuildSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Scenes:
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
+  - enabled: 1
+    path: Assets/Scenes/GameCreation.unity
+    guid: 374d241fc59a6d146bfd2805a15a4912
+  - enabled: 1
+    path: Assets/Scenes/MainGame.unity
+    guid: 4c87035cd2e8fe048bfb8d5f77debdab
+  - enabled: 1
+    path: Assets/Scenes/PartnerCard.unity
+    guid: d628c1a2c2320814c931e1c70cbdb5df
+  - enabled: 1
+    path: Assets/Scenes/SingleCard.unity
+    guid: c1f8b2b87b3a1a24c912870abff419f2
+  - enabled: 1
+    path: Assets/Scenes/WinningScreen.unity
+    guid: 3d57302259d5c104eac2bd73b0007fa2
+  m_configObjects: {}
