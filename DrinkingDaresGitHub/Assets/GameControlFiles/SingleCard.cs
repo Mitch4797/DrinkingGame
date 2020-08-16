@@ -8,9 +8,6 @@ using System.Security.Permissions;
 
 public class SingleCard : MonoBehaviour
 {
-    //Attributes
-    int cardnum = GameMaster.GMI.getSelectedCard();
-
     //TextFeils to Generate:
     public Text CardType;
     public Text CardTask;
@@ -21,10 +18,12 @@ public class SingleCard : MonoBehaviour
 
     public void taskcomplete()
     {
-        GameMaster.GMI.PlayerInformation[GameMaster.GMI.getCurrentTurn() - 1].addscore(GameMaster.GMI.drawnCards[cardnum].getPoints());
+        GameMaster.GMI.PlayerInformation[GameMaster.GMI.getCurrentTurn() - 1].addscore(GameMaster.GMI.drawnCards[GameMaster.GMI.getSelectedCard()].getPoints());
         GameMaster.GMI.nextTurn();
         SceneManager.LoadScene("MainGame");
     }
+
+
     public void taskfailed()
     {
         GameMaster.GMI.nextTurn();
@@ -35,9 +34,9 @@ public class SingleCard : MonoBehaviour
     void Start()
     {
         currentPlayer.text = "Current Player - " + GameMaster.GMI.getCurrentTurn();
-        CardType.text = "Type: " + GameMaster.GMI.drawnCards[cardnum].getTypeString();
-        CardPoints.text = "Points: " + GameMaster.GMI.drawnCards[cardnum].getPoints();
-        CardTask.text = GameMaster.GMI.drawnCards[cardnum].getTask();
+        CardType.text = "Type: " + GameMaster.GMI.drawnCards[GameMaster.GMI.getSelectedCard()].getTypeString();
+        CardPoints.text = "Points: " + GameMaster.GMI.drawnCards[GameMaster.GMI.getSelectedCard()].getPoints();
+        CardTask.text = GameMaster.GMI.drawnCards[GameMaster.GMI.getSelectedCard()].getTask();
     }
 
     // Update is called once per frame
