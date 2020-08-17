@@ -3911,6 +3911,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4d6ac745bc4e754988728982a1f3e45, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cardDeckTxt: {fileID: 4900000, guid: bcd37677438084141b9106cb9cb70f6d, type: 3}
 --- !u!4 &1880841572
 Transform:
   m_ObjectHideFlags: 0

@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
+using System.Reflection;
 using System.Threading.Tasks;
 using UnityEngine;
 
@@ -28,6 +30,7 @@ public class Deck : MonoBehaviour
     public card[] gameDeck = new card[300];
     int fillsize = 0;
     int drawpoint;
+    public TextAsset cardDeckTxt;
 
     //Methods
     public void addCard(int Ty, int R, int D, string T)
@@ -38,24 +41,21 @@ public class Deck : MonoBehaviour
     }
 
     //Compile orderedDeck
-    public void makeDeck(bool[] type, bool[] rating)
+    public void makeDeck(bool[] type, bool[] rating)            /////////////Need work here
     {
-        string deckLocation = "Assets/TasksFiles/CardDeck.txt";
+        string text = cardDeckTxt.text;
+        string[] lines = text.Split(System.Environment.NewLine.ToCharArray());
 
-        using(var reader = new StreamReader(deckLocation))
-        {
-            while(!reader.EndOfStream)
+            foreach(string line in lines)
             {
-                var line = reader.ReadLine();
-                var values = line.Split(';');
-
+                UnityEngine.Debug.Log(line);                    /////////Debug Line
+                string[] values = line.Split(';');
                 if (type[int.Parse(values[0])] && rating[int.Parse(values[1])])
                 {
                     addCard(int.Parse(values[0]), int.Parse(values[1]), int.Parse(values[2]), values[3]);
                 }
 
             }
-        }
 
         makeGameDeck();
 
