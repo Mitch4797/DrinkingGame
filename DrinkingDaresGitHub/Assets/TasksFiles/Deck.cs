@@ -49,12 +49,19 @@ public class Deck : MonoBehaviour
             foreach(string line in lines)
             {
                 UnityEngine.Debug.Log(line);                    /////////Debug Line
-                string[] values = line.Split(';');
-                if (type[int.Parse(values[0])] && rating[int.Parse(values[1])])
+                string[] values = new string[5];
+                values = line.Split(';');
+
+                string V0 = values[0];
+                string V1 = values[1];
+                string V2 = values[2];
+                string V3 = values[3];
+
+
+                if (type[int.Parse(V0)] && rating[int.Parse(V1)])
                 {
                     addCard(int.Parse(values[0]), int.Parse(values[1]), int.Parse(values[2]), values[3]);
                 }
-
             }
 
         makeGameDeck();

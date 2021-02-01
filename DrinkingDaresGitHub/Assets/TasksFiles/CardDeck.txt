@@ -1,5 +1,5 @@
+1; 0; 3; Everyone likes hugs. Hug another player.
 2; 0; 1; If you were a fish, what kind would you be?
-1; 0; 3; Everyone likes hugs. Hug another player
 2; 0; 2; Where is the strangest place you have peed?
 0; 0; 3; Talk in an accent till your next turn. Every time you mess up, take a drink
 2; 0; 2; How often do you wash your undergarments?
